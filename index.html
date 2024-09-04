@@ -11,12 +11,9 @@
             height: auto;
         }
 
-        /* Centramos el contenido en la pantalla */
+        /* Aseguramos que la página sea desplazable */
         body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+            display: block;
             margin: 0;
             background-color: #a8e6a3; /* Un verde más vibrante */
             font-family: 'Raleway', sans-serif;
@@ -37,10 +34,8 @@
 
         /* El texto que se superpone */
         .overlay-text {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            position: relative;
+            margin: 0 auto;
             background-color: rgba(0, 0, 0, 0.6); /* Fondo semitransparente para el texto */
             padding: 20px;
             border-radius: 10px;
@@ -48,16 +43,22 @@
             color: white;
         }
 
+        /* Ajustes de desplazamiento */
         .overlay-text h1, .overlay-text h2 {
-            font-size: 2rem;
+            font-size: 1.5rem;
             margin-bottom: 10px;
-            color: #fff;
         }
 
         .overlay-text p {
-            font-size: 1.2rem;
-            margin-bottom: 15px;
-            color: #fff;
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
+
+        /* Hacemos que el cuerpo sea desplazable */
+        .content-container {
+            overflow-y: scroll;
+            max-height: 100vh;
+            padding: 20px;
         }
 
         .cta-button {
@@ -74,6 +75,19 @@
         .cta-button:hover {
             background-color: #ffc107;
         }
+
+        /* Mejorar el desplazamiento en dispositivos móviles */
+        @media screen and (max-width: 768px) {
+            .overlay-text h1, .overlay-text h2 {
+                font-size: 1.2rem;
+            }
+            .overlay-text p {
+                font-size: 0.9rem;
+            }
+            .cta-button {
+                font-size: 0.9rem;
+            }
+        }
     </style>
     <!-- Cargamos la fuente de Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap" rel="stylesheet">
@@ -81,20 +95,22 @@
 <body>
     <div class="image-text-container">
         <img src="IMG_3602.jpeg" alt="FritHurra Logo" class="background-image">
-        <div class="overlay-text">
-            <h1>¡Bienvenidos a FritHurra! 🎉</h1>
-            <p><strong>¿Te ha pasado que después de una buena comida te queda ese olor a fritura en la ropa? 😩</strong></p>
-            <p>Nosotros también lo hemos sentido, y por eso estamos creando <strong>FritHurra!</strong>, un desodorante para ropa especialmente diseñado para eliminar o reducir el olor a fritura.</p>
-            <h2>¿Cómo puedes ayudarnos? 👇</h2>
-            <p>Responde a nuestra breve encuesta y cuéntanos qué características te gustaría ver en <strong>FritHurra!</strong>. Como agradecimiento, serás de los primeros en enterarte cuando el producto esté listo para su lanzamiento. ¡Incluso podrías ser parte de un grupo exclusivo para probar el producto antes de su salida al mercado! 🎁</p>
-            <a href="#encuesta" class="cta-button">PARTICIPA EN LA ENCUESTA AQUÍ</a>
-            <h2>¿Qué es FritHurra?</h2>
-            <p><strong>FritHurra!</strong> es un desodorante para ropa que actúa sobre las fibras de tus prendas para eliminar ese molesto olor a fritura que se queda después de cocinar. ¡Es fácil de usar y dejará tu ropa oliendo fresca, sin complicaciones!</p>
-            <h2>Mantente informado 🚀</h2>
-            <p>¿Quieres saber más sobre <strong>FritHurra!</strong> y ser de los primeros en enterarte de nuestro lanzamiento? Deja tu correo abajo y únete a nuestra comunidad. Te enviaremos novedades, ofertas especiales y ¡quizá hasta una sorpresa! 😉</p>
-            <a href="#suscripcion" class="cta-button">SUSCRÍBETE AQUÍ</a>
-            <h2>¿Quiénes somos?</h2>
-            <p>Somos un equipo apasionado por encontrar soluciones a problemas cotidianos. <strong>FritHurra!</strong> nació de la necesidad de eliminar el olor a fritura en la ropa, y estamos trabajando para hacer este sueño realidad. ¡Gracias por acompañarnos en este camino!</p>
+        <div class="content-container">
+            <div class="overlay-text">
+                <h1>¡Bienvenidos a FritHurra! 🎉</h1>
+                <p><strong>¿Te ha pasado que después de una buena comida te queda ese olor a fritura en la ropa? 😩</strong></p>
+                <p>Nosotros también lo hemos sentido, y por eso estamos creando <strong>FritHurra!</strong>, un desodorante para ropa especialmente diseñado para eliminar o reducir el olor a fritura.</p>
+                <h2>¿Cómo puedes ayudarnos? 👇</h2>
+                <p>Responde a nuestra breve encuesta y cuéntanos qué características te gustaría ver en <strong>FritHurra!</strong>. Como agradecimiento, serás de los primeros en enterarte cuando el producto esté listo para su lanzamiento. ¡Incluso podrías ser parte de un grupo exclusivo para probar el producto antes de su salida al mercado! 🎁</p>
+                <a href="#encuesta" class="cta-button">PARTICIPA EN LA ENCUESTA AQUÍ</a>
+                <h2>¿Qué es FritHurra?</h2>
+                <p><strong>FritHurra!</strong> es un desodorante para ropa que actúa sobre las fibras de tus prendas para eliminar ese molesto olor a fritura que se queda después de cocinar. ¡Es fácil de usar y dejará tu ropa oliendo fresca, sin complicaciones!</p>
+                <h2>Mantente informado 🚀</h2>
+                <p>¿Quieres saber más sobre <strong>FritHurra!</strong> y ser de los primeros en enterarte de nuestro lanzamiento? Deja tu correo abajo y únete a nuestra comunidad. Te enviaremos novedades, ofertas especiales y ¡quizá hasta una sorpresa! 😉</p>
+                <a href="#suscripcion" class="cta-button">SUSCRÍBETE AQUÍ</a>
+                <h2>¿Quiénes somos?</h2>
+                <p>Somos un equipo apasionado por encontrar soluciones a problemas cotidianos. <strong>FritHurra!</strong> nació de la necesidad de eliminar el olor a fritura en la ropa, y estamos trabajando para hacer este sueño realidad. ¡Gracias por acompañarnos en este camino!</p>
+            </div>
         </div>
     </div>
 </body>
