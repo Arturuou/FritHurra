@@ -5,17 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FritHurra!</title>
     <style>
-        /* Hacemos que la imagen sea responsiva */
-        img {
-            max-width: 100%;
-            height: auto;
-        }
-
         /* Aseguramos que la página sea desplazable */
         body {
             margin: 0;
             font-family: 'Raleway', sans-serif;
             background-color: #a8e6a3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
         }
 
         /* Contenedor para la imagen y el texto */
@@ -23,27 +21,37 @@
             position: relative;
             width: 100%;
             height: 100vh;
-            overflow-y: auto; /* Permite el desplazamiento en caso de que el texto sea más largo que la pantalla */
+            max-width: 1000px; /* Limita el ancho en pantallas más grandes */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
         }
 
         /* Estilo para la imagen de fondo */
         .background-image {
+            position: absolute;
+            top: 50%;
+            left: 50%;
             width: 100%;
-            height: auto;
+            height: 100%;
+            object-fit: cover; /* Asegura que la imagen siempre ocupe toda la pantalla */
+            transform: translate(-50%, -50%);
+            z-index: -1; /* Envía la imagen al fondo */
         }
 
         /* Contenedor del texto sobre la imagen */
         .overlay-text {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            position: relative;
+            max-height: 100%;
             overflow-y: auto;
             background-color: rgba(0, 0, 0, 0.6); /* Fondo semitransparente */
             padding: 20px;
             box-sizing: border-box;
             color: white;
+            width: 90%;
+            max-width: 800px; /* Limita el ancho del texto */
+            border-radius: 10px;
         }
 
         /* Estilos del texto */
