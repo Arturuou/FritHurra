@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FritHurra!</title>
+  <!-- Favicon -->
   <link rel="icon" href="9C9D0E26-09AC-4B4B-BF2C-42000F6E3A32.png" type="image/png" />
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap" rel="stylesheet" />
 
@@ -12,10 +13,20 @@
       margin: 0;
       font-family: 'Raleway', sans-serif;
       background-color: #48C6E8;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
       min-height: 100vh;
+      position: relative;
+    }
+
+    /* Fondo con opacidad */
+    .background-image {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+      opacity: 0.08;
     }
 
     header {
@@ -39,15 +50,14 @@
       width: 100%;
       max-width: 1000px;
       padding: 20px;
+      margin: 0 auto;
       box-sizing: border-box;
     }
 
     .overlay-text {
       background-color: rgba(0, 0, 0, 0.6);
       padding: 20px;
-      box-sizing: border-box;
       color: white;
-      width: 100%;
       border-radius: 10px;
     }
 
@@ -112,12 +122,18 @@
     }
   </style>
 </head>
+
 <body>
 
+  <!-- Fondo opaco -->
+  <img src="003BBA33-8F1B-4E81-B90D-A02A739D434D.png" alt="Fondo decorativo FritHurra" class="background-image" />
+
+  <!-- Logo -->
   <header>
     <img src="003BBA33-8F1B-4E81-B90D-A02A739D434D.png" alt="Logo de FritHurra - Desodorante para ropa" />
   </header>
 
+  <!-- Contenido -->
   <div class="image-text-container">
     <div class="overlay-text">
       <h1>Frit Frit Hurra! 🎉</h1>
@@ -143,7 +159,7 @@
     </div>
   </div>
 
-  <!-- Botón flotante de WhatsApp -->
+  <!-- Botón de WhatsApp -->
   <a href="https://wa.me/56958644776" target="_blank" class="whatsapp-button" title="Contáctanos por WhatsApp">💬</a>
 
 </body>
