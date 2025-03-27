@@ -1,122 +1,150 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FritHurra!</title>
-    <style>
-        /* Aseguramos que la página sea desplazable */
-        body {
-            margin: 0;
-            font-family: 'Raleway', sans-serif;
-            background-color: #48C6E8;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FritHurra!</title>
+  <link rel="icon" href="9C9D0E26-09AC-4B4B-BF2C-42000F6E3A32.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap" rel="stylesheet" />
 
-        /* Contenedor para la imagen y el texto */
-        .image-text-container {
-            position: relative;
-            width: 100%;
-            height: 100vh;
-            max-width: 1000px; /* Limita el ancho en pantallas más grandes */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-        }
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Raleway', sans-serif;
+      background-color: #48C6E8;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
 
-        /* Estilo para la imagen de fondo */
-        .background-image {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* Asegura que la imagen siempre ocupe toda la pantalla */
-            transform: translate(-50%, -50%);
-            z-index: -1; /* Envía la imagen al fondo */
-        }
+    header {
+      width: 100%;
+      text-align: center;
+      padding: 20px 0;
+    }
 
-        /* Contenedor del texto sobre la imagen */
-        .overlay-text {
-            position: relative;
-            max-height: 100%;
-            overflow-y: auto;
-            background-color: rgba(0, 0, 0, 0.6); /* Fondo semitransparente */
-            padding: 20px;
-            box-sizing: border-box;
-            color: white;
-            width: 90%;
-            max-width: 800px; /* Limita el ancho del texto */
-            border-radius: 10px;
-        }
+    header img {
+      max-width: 200px;
+      height: auto;
+      animation: fadeIn 1.5s ease-in-out;
+    }
 
-        /* Estilos del texto */
-        .overlay-text h1, .overlay-text h2 {
-            font-size: 2rem;
-            margin-bottom: 10px;
-        }
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: scale(0.9); }
+      100% { opacity: 1; transform: scale(1); }
+    }
 
-        .overlay-text p {
-            font-size: 1.2rem;
-            margin-bottom: 15px;
-        }
+    .image-text-container {
+      width: 100%;
+      max-width: 1000px;
+      padding: 20px;
+      box-sizing: border-box;
+    }
 
-        /* Botón de llamada a la acción */
-        .cta-button {
-            display: inline-block;
-            background-color: #ffdd57;
-            padding: 10px 20px;
-            border-radius: 5px;
-            color: black;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-        }
+    .overlay-text {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 20px;
+      box-sizing: border-box;
+      color: white;
+      width: 100%;
+      border-radius: 10px;
+    }
 
-        .cta-button:hover {
-            background-color: #48C6E8;
-        }
+    .overlay-text h1, .overlay-text h2 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
 
-        /* Ajustes para dispositivos móviles */
-        @media screen and (max-width: 768px) {
-            .overlay-text h1, .overlay-text h2 {
-                font-size: 1.5rem;
-            }
-            .overlay-text p {
-                font-size: 1rem;
-            }
-            .cta-button {
-                font-size: 0.9rem;
-            }
-        }
-    </style>
-    <!-- Cargamos la fuente de Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap" rel="stylesheet">
+    .overlay-text p {
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background-color: #ffdd57;
+      padding: 10px 20px;
+      border-radius: 5px;
+      color: black;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background-color: #ffc107;
+    }
+
+    .whatsapp-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      color: white;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      font-size: 30px;
+      text-align: center;
+      line-height: 60px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      z-index: 1000;
+      text-decoration: none;
+    }
+
+    .whatsapp-button:hover {
+      background-color: #20b358;
+    }
+
+    @media screen and (max-width: 768px) {
+      .overlay-text h1, .overlay-text h2 {
+        font-size: 1.5rem;
+      }
+
+      .overlay-text p {
+        font-size: 1rem;
+      }
+
+      .cta-button {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="image-text-container">
-        <img src="003BBA33-8F1B-4E81-B90D-A02A739D434D.png" alt="FritHurra Logo" class="background-image">
-        <div class="overlay-text">
-            <h1>Frit Frit Hurra! 🎉</h1> <!-- Aquí añadimos la frase destacada -->
-            <p><strong>¿Te ha pasado que después de una buena comida te queda ese olor a fritura en la ropa? 😩</strong></p>
-            <p>Nosotros también lo hemos sentido, y por eso estamos creando <strong>FritHurra!</strong>, un desodorante para ropa especialmente diseñado para eliminar o reducir el olor a fritura.</p>
-            <h2>¿Cómo puedes ayudarnos? 👇</h2>
-            <p>Responde a nuestra breve encuesta y cuéntanos qué características te gustaría ver en <strong>FritHurra!</strong>. Como agradecimiento, serás de los primeros en enterarte cuando el producto esté listo para su lanzamiento. ¡Incluso podrías ser parte de un grupo exclusivo para probar el producto antes de su salida al mercado! 🎁</p>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdvDYGPVC6VHwqCiY9aCvFDqdMM96V32RCD0FCXgWYJP8tV5A/viewform?usp=sf_link" target="_blank" class="cta-button">PARTICIPA EN LA ENCUESTA AQUÍ</a>
-            <h2>¿Qué es FritHurra!?</h2>
-            <p><strong>FritHurra!</strong> es un desodorante para ropa que actúa sobre las fibras de tus prendas para eliminar ese molesto olor a fritura que se queda después de cocinar. ¡Es fácil de usar y dejará tu ropa oliendo fresca, sin complicaciones!</p>
-            <h2>Mantente informado 🚀</h2>
-            <p>¿Quieres saber más sobre <strong>FritHurra!</strong> y ser de los primeros en enterarte de nuestro lanzamiento? Deja tu correo abajo y únete a nuestra comunidad. Te enviaremos novedades, ofertas especiales y ¡quizá hasta una sorpresa! 😉</p>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeVG-LIPHw_sdN_H27o8lDvvo0UhPIrVQyrTxgNBoUfC2qvGg/viewform?usp=sf_link" target="_blank" class="cta-button">SUSCRÍBETE AQUÍ</a>
-            <h2>¿Quiénes somos?</h2>
-            <p>Somos un equipo apasionado por encontrar soluciones a problemas cotidianos. <strong>FritHurra!</strong> nació de la necesidad de eliminar el olor a fritura en la ropa, y estamos trabajando para hacer este sueño realidad. ¡Gracias por acompañarnos en este camino!</p>
-            <h2>Contacto</h2>
-            <p>Si tienes alguna duda o sugerencia, no dudes en escribirnos a: <strong>hola@frithurra.cl</strong></p>
-        </div>
+
+  <header>
+    <img src="003BBA33-8F1B-4E81-B90D-A02A739D434D.png" alt="Logo de FritHurra - Desodorante para ropa" />
+  </header>
+
+  <div class="image-text-container">
+    <div class="overlay-text">
+      <h1>Frit Frit Hurra! 🎉</h1>
+      <p><strong>¿Te ha pasado que después de una buena comida te queda ese olor a fritura en la ropa? 😩</strong></p>
+      <p>Nosotros también lo hemos sentido, y por eso estamos creando <strong>FritHurra!</strong>, un desodorante para ropa especialmente diseñado para eliminar o reducir el olor a fritura.</p>
+
+      <h2>¿Cómo puedes ayudarnos? 👇</h2>
+      <p>Responde a nuestra breve encuesta y cuéntanos qué características te gustaría ver en <strong>FritHurra!</strong>. Como agradecimiento, serás de los primeros en enterarte cuando el producto esté listo para su lanzamiento. ¡Incluso podrías ser parte de un grupo exclusivo para probar el producto antes de su salida al mercado! 🎁</p>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdvDYGPVC6VHwqCiY9aCvFDqdMM96V32RCD0FCXgWYJP8tV5A/viewform?usp=sf_link" target="_blank" class="cta-button">PARTICIPA EN LA ENCUESTA AQUÍ</a>
+
+      <h2>¿Qué es FritHurra!?</h2>
+      <p><strong>FritHurra!</strong> es un desodorante para ropa que actúa sobre las fibras de tus prendas para eliminar ese molesto olor a fritura que se queda después de cocinar. ¡Es fácil de usar y dejará tu ropa oliendo fresca, sin complicaciones!</p>
+
+      <h2>Mantente informado 🚀</h2>
+      <p>¿Quieres saber más sobre <strong>FritHurra!</strong> y ser de los primeros en enterarte de nuestro lanzamiento? Deja tu correo abajo y únete a nuestra comunidad. Te enviaremos novedades, ofertas especiales y ¡quizá hasta una sorpresa! 😉</p>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSeVG-LIPHw_sdN_H27o8lDvvo0UhPIrVQyrTxgNBoUfC2qvGg/viewform?usp=sf_link" target="_blank" class="cta-button">SUSCRÍBETE AQUÍ</a>
+
+      <h2>¿Quiénes somos?</h2>
+      <p>Somos un equipo apasionado por encontrar soluciones a problemas cotidianos. <strong>FritHurra!</strong> nació de la necesidad de eliminar el olor a fritura en la ropa, y estamos trabajando para hacer este sueño realidad. ¡Gracias por acompañarnos en este camino!</p>
+
+      <h2>Contacto</h2>
+      <p>Si tienes alguna duda o sugerencia, no dudes en escribirnos a: <strong>hola@frithurra.cl</strong></p>
     </div>
+  </div>
+
+  <!-- Botón flotante de WhatsApp -->
+  <a href="https://wa.me/56958644776" target="_blank" class="whatsapp-button" title="Contáctanos por WhatsApp">💬</a>
+
 </body>
 </html>
