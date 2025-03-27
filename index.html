@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FritHurra!</title>
-  <!-- Favicon -->
   <link rel="icon" href="9C9D0E26-09AC-4B4B-BF2C-42000F6E3A32.png" type="image/png" />
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap" rel="stylesheet" />
 
@@ -17,16 +16,19 @@
       position: relative;
     }
 
-    /* Fondo con opacidad */
-    .background-image {
+    /* Fondo decorativo */
+    body::before {
+      content: "";
+      background-image: url('003BBA33-8F1B-4E81-B90D-A02A739D434D.png');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.15;
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      object-fit: cover;
       z-index: -1;
-      opacity: 0.08;
     }
 
     header {
@@ -86,6 +88,7 @@
       background-color: #ffc107;
     }
 
+    /* Botón flotante de WhatsApp con latido */
     .whatsapp-button {
       position: fixed;
       bottom: 20px;
@@ -101,10 +104,22 @@
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
       z-index: 1000;
       text-decoration: none;
+      animation: pulse 2s infinite;
     }
 
-    .whatsapp-button:hover {
-      background-color: #20b358;
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+      }
+      70% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+      }
+      100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+      }
     }
 
     @media screen and (max-width: 768px) {
@@ -125,15 +140,10 @@
 
 <body>
 
-  <!-- Fondo opaco -->
-  <img src="003BBA33-8F1B-4E81-B90D-A02A739D434D.png" alt="Fondo decorativo FritHurra" class="background-image" />
-
-  <!-- Logo -->
   <header>
     <img src="003BBA33-8F1B-4E81-B90D-A02A739D434D.png" alt="Logo de FritHurra - Desodorante para ropa" />
   </header>
 
-  <!-- Contenido -->
   <div class="image-text-container">
     <div class="overlay-text">
       <h1>Frit Frit Hurra! 🎉</h1>
@@ -159,7 +169,6 @@
     </div>
   </div>
 
-  <!-- Botón de WhatsApp -->
   <a href="https://wa.me/56958644776" target="_blank" class="whatsapp-button" title="Contáctanos por WhatsApp">💬</a>
 
 </body>
