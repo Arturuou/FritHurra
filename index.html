@@ -175,9 +175,9 @@
     </div>
   </div>
 
-  <!-- Script contador -->
+  <!-- Script contador global corregido -->
   <script>
-    fetch('https://api.countapi.xyz/hit/frithurra.cl/visitas')
+    fetch('https://api.countapi.xyz/update/frithurra/visitas/?amount=1')
       .then(response => response.json())
       .then(data => {
         document.getElementById('visitas').textContent = data.value;
