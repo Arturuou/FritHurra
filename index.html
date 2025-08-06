@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FritHurra!® - Desodorante para ropa</title>
 
-  <!-- Meta descripción optimizada -->
   <meta name="description" content="FritHurra!® es una marca registrada en INAPI. Spray desodorante para ropa en desarrollo que elimina el olor a fritura y deja tus prendas frescas al instante.">
 
   <!-- Open Graph -->
@@ -18,7 +17,15 @@
   <link rel="icon" href="9C9D0E26-09AC-4B4B-BF2C-42000F6E3A32.png" type="image/png" />
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap" rel="stylesheet" />
 
-  <!-- Estilos -->
+  <!-- Google Ads Tag -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17443608309"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-17443608309');
+  </script>
+
   <style>
     body {
       margin: 0;
@@ -26,7 +33,6 @@
       background-color: #48C6E8;
       min-height: 100vh;
     }
-
     body::before {
       content: "";
       background-image: url('9C9D0E26-09AC-4B4B-BF2C-42000F6E3A32.png');
@@ -40,8 +46,6 @@
       height: 100%;
       z-index: -1;
     }
-
-    /* Banner fijo en móviles */
     .dev-banner {
       background-color: #ffdd57;
       color: black;
@@ -52,41 +56,33 @@
       top: 0;
       z-index: 999;
     }
-
     header {
       text-align: center;
       padding: 20px 0;
     }
-
     header img {
       max-width: 200px;
       height: auto;
     }
-
     .image-text-container {
       max-width: 1000px;
       padding: 20px;
       margin: 0 auto;
-      box-sizing: border-box;
     }
-
     .overlay-text {
       background-color: rgba(0, 0, 0, 0.6);
       padding: 20px;
       color: white;
       border-radius: 10px;
     }
-
     .overlay-text h1 {
       font-size: 2rem;
       margin-bottom: 10px;
     }
-
     .overlay-text p {
       font-size: 1.2rem;
       margin-bottom: 15px;
     }
-
     .cta-button {
       display: inline-block;
       background-color: #ffdd57;
@@ -97,56 +93,38 @@
       font-weight: bold;
       margin-top: 10px;
     }
-
     .cta-button:hover {
       background-color: #ffc107;
     }
-
     iframe {
       max-width: 100%;
     }
 
-    /* Botón flotante de WhatsApp (oculto por defecto) */
-    .whatsapp-button {
-      display: none; /* Eliminar esta línea para activar */
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #25D366;
-      color: white;
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      font-size: 30px;
-      text-align: center;
-      line-height: 60px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-      z-index: 1000;
-      text-decoration: none;
+    /* Estilo contador */
+    #contador {
+      background-color: rgba(255, 255, 255, 0.9);
+      color: #333;
+      padding: 10px 20px;
+      border-radius: 50px;
+      display: inline-flex;
+      align-items: center;
+      font-weight: bold;
+      margin-top: 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
-
-    /* Responsive */
+    #contador span {
+      margin-left: 8px;
+      font-size: 1.2rem;
+      color: #e67e22;
+    }
     @media screen and (max-width: 768px) {
-      .overlay-text h1 {
-        font-size: 1.6rem;
-      }
-      .overlay-text p {
-        font-size: 1rem;
-      }
-      .cta-button {
-        font-size: 1rem;
-        width: 100%;
-        text-align: center;
-      }
+      .overlay-text h1 { font-size: 1.6rem; }
+      .overlay-text p { font-size: 1rem; }
+      .cta-button { font-size: 1rem; width: 100%; text-align: center; }
     }
-
     @media screen and (max-width: 480px) {
-      header img {
-        max-width: 150px;
-      }
-      .overlay-text {
-        padding: 15px;
-      }
+      header img { max-width: 150px; }
+      .overlay-text { padding: 15px; }
     }
   </style>
 </head>
@@ -191,15 +169,19 @@
 
       <h2>Contacto</h2>
       <p>📧 <strong>hola@frithurra.cl</strong></p>
+
+      <!-- Contador elegante -->
+      <div id="contador">👀 Visitas totales: <span id="visitas">0</span></div>
     </div>
   </div>
 
-  <!-- Botón flotante de WhatsApp (oculto) -->
-  <a href="https://wa.me/569XXXXXXXX" 
-     class="whatsapp-button" 
-     target="_blank" 
-     title="Chatea con nosotros por WhatsApp">
-    💬
-  </a>
+  <!-- Script contador -->
+  <script>
+    fetch('https://api.countapi.xyz/hit/frithurra.cl/visitas')
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('visitas').textContent = data.value;
+      });
+  </script>
 </body>
 </html>
