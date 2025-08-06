@@ -7,7 +7,7 @@
 
   <!-- Meta descripción optimizada -->
   <meta name="description" content="FritHurra!® es una marca registrada en INAPI. Spray desodorante para ropa en desarrollo que elimina el olor a fritura y deja tus prendas frescas al instante.">
-  
+
   <!-- Open Graph -->
   <meta property="og:title" content="FritHurra!® - Desodorante para ropa" />
   <meta property="og:description" content="Elimina el olor a fritura de tu ropa. FritHurra!® es frescura instantánea para tus prendas." />
@@ -106,6 +106,25 @@
       max-width: 100%;
     }
 
+    /* Botón flotante de WhatsApp (oculto por defecto) */
+    .whatsapp-button {
+      display: none; /* Eliminar esta línea para activar */
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      color: white;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      font-size: 30px;
+      text-align: center;
+      line-height: 60px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      z-index: 1000;
+      text-decoration: none;
+    }
+
     /* Responsive */
     @media screen and (max-width: 768px) {
       .overlay-text h1 {
@@ -130,17 +149,6 @@
       }
     }
   </style>
-
-  <!-- Google Analytics (rellena tu ID) -->
-  <!-- 
-  <script async src="https://www.googletagmanager.com/gtag/js?id=TU_ID_AQUI"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'TU_ID_AQUI');
-  </script>
-  -->
 </head>
 
 <body>
@@ -185,5 +193,13 @@
       <p>📧 <strong>hola@frithurra.cl</strong></p>
     </div>
   </div>
+
+  <!-- Botón flotante de WhatsApp (oculto) -->
+  <a href="https://wa.me/569XXXXXXXX" 
+     class="whatsapp-button" 
+     target="_blank" 
+     title="Chatea con nosotros por WhatsApp">
+    💬
+  </a>
 </body>
 </html>
