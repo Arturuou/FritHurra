@@ -127,7 +127,37 @@
     }
   </style>
 </head>
+<!-- Botón flotante de contacto SOLO en móviles -->
+<style>
+  @media (max-width: 768px) {
+    .boton-contacto {
+      display: block;
+    }
+  }
 
+  @media (min-width: 769px) {
+    .boton-contacto {
+      display: none;
+    }
+  }
+</style>
+
+<a href="mailto:hola@frithurra.cl" class="boton-contacto" style="
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #ffdd57;
+  color: black;
+  padding: 12px 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  z-index: 1000;
+  font-family: 'Raleway', sans-serif;
+">
+  📧 Escríbenos
+</a>
 <body>
   <div class="dev-banner">
     🚀 Producto en desarrollo – FritHurra!® es una marca registrada en INAPI. Sé de los primeros en probarlo.
