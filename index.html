@@ -10,16 +10,11 @@
     gtag('config', 'GT-TNFHJKH7');
     gtag('config', 'AW-17443608309');
   </script>
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FritHurra!® - Desodorante para ropa</title>
-
   <meta name="description" content="FritHurra!® es una marca registrada en INAPI (N.º 1385816). Spray desodorante para ropa en desarrollo que elimina el olor a fritura y deja tus prendas frescas al instante.">
-  <meta property="og:title" content="FritHurra!® - Desodorante para ropa" />
-  <meta property="og:description" content="Elimina el olor a fritura de tu ropa. FritHurra!® es frescura instantánea para tus prendas." />
-  <meta property="og:image" content="https://www.frithurra.cl/9C9D0E26-09AC-4B4B-BF2C-42000F6E3A32.png" />
-  <meta property="og:url" content="https://www.frithurra.cl" />
-  <meta property="og:type" content="website" />
 
   <link rel="icon" href="9C9D0E26-09AC-4B4B-BF2C-42000F6E3A32.png" type="image/png" />
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap" rel="stylesheet" />
@@ -31,7 +26,6 @@
       background-color: #48C6E8;
       min-height: 100vh;
     }
-
     body::before {
       content: "";
       background-image: url('9C9D0E26-09AC-4B4B-BF2C-42000F6E3A32.png');
@@ -45,7 +39,6 @@
       height: 100%;
       z-index: -1;
     }
-
     .dev-banner {
       background-color: #ffdd57;
       color: black;
@@ -56,48 +49,23 @@
       top: 0;
       z-index: 999;
     }
-
-    header {
-      text-align: center;
-      padding: 20px 0;
-    }
-
-    header img {
-      max-width: 200px;
-      height: auto;
-    }
-
+    header { text-align: center; padding: 20px 0; }
+    header img { max-width: 200px; height: auto; }
     .image-text-container {
       max-width: 1000px;
       padding: 20px;
       margin: 0 auto;
       box-sizing: border-box;
     }
-
     .overlay-text {
-      background-color: rgba(0, 0, 0, 0.6);
+      background-color: rgba(0, 0, 0, 0.7);
       padding: 20px;
       color: white;
       border-radius: 10px;
     }
-
-    .overlay-text h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-      font-weight: 600;
-    }
-
-    .overlay-text h2 {
-      font-size: 1.8rem;
-      margin: 30px 0 10px;
-      font-weight: 600;
-    }
-
-    .overlay-text p, .overlay-text li {
-      font-size: 1.15rem;
-      line-height: 1.6;
-    }
-
+    .overlay-text h1 { font-size: 2.5rem; margin-bottom: 10px; font-weight: 600; }
+    .overlay-text h2 { font-size: 1.8rem; margin: 30px 0 10px; font-weight: 600; }
+    .overlay-text p, .overlay-text li { font-size: 1.18rem; line-height: 1.7; }
     .cta-button {
       display: inline-block;
       background-color: #ffdd57;
@@ -107,37 +75,56 @@
       text-decoration: none;
       font-weight: bold;
       margin-top: 10px;
+      border: 1px solid rgba(0,0,0,0.1);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     }
-
-    .cta-button:hover {
-      background-color: #ffc107;
-    }
-
-    iframe {
-      max-width: 100%;
-    }
-
+    .cta-button:hover { background-color: #ffc107; transform: translateY(-1px); }
+    iframe { max-width: 100%; }
     footer {
       text-align: center;
       padding: 15px;
-      background-color: rgba(0,0,0,0.6);
+      background-color: rgba(0,0,0,0.75);
       color: white;
       font-size: 1rem;
       border-top: 2px solid #ffdd57;
       margin-top: 20px;
       border-radius: 0 0 10px 10px;
     }
+    footer a { color: #fff; text-decoration: underline; }
+    @media (max-width: 768px) { .boton-contacto { display: block; } }
+    @media (min-width: 769px) { .boton-contacto { display: none; } }
 
-    @media (max-width: 768px) {
-      .boton-contacto {
-        display: block;
-      }
+    /* Estilos citas alegres */
+    .cita-alegre{
+      background:#fff8dc;
+      border-left:6px solid #ffdd57;
+      border-radius:12px;
+      padding:16px 18px;
+      color:#333;
+      box-shadow:0 6px 14px rgba(0,0,0,.10);
+      margin:14px 0;
     }
+    .cita-alegre .emoji{ font-size:1.2rem; margin-right:6px; }
 
-    @media (min-width: 769px) {
-        .boton-contacto {
-        display: none;
-      }
+    .burbuja{
+      background:#fffbec;
+      border:1px solid #ffe28a;
+      border-radius:14px;
+      padding:14px 16px;
+      position:relative;
+      margin:16px 0 22px;
+      color:#2a2a2a;
+    }
+    .burbuja:after{
+      content:"";
+      position:absolute;
+      bottom:-10px; left:22px;
+      border-width:10px 10px 0 10px;
+      border-style:solid;
+      border-color:#fffbec transparent transparent transparent;
+    }
+    .burbuja .autor{
+      display:block; font-size:.95rem; opacity:.75; margin-top:8px;
     }
   </style>
 </head>
@@ -159,16 +146,14 @@
       <p>Uno de los integrantes del equipo fue a casa de su hermano y su cuñada. ¿Y qué había para comer?<br>
       Una verdadera <strong>sinfonía de fritura 🎶🍽️</strong>: papas fritas, plátano frito, cebolla salteada, sopaipillas, huevo revuelto con longaniza...<br>
       <em>Solo faltó freír el postre.</em></p>
-      <p>Todo exquisito, buena conversación, sobremesa larga. Pero al momento de salir, llegó <strong>el golpe de realidad</strong>:</p>
-      <blockquote style="background:#fff3cd; padding:15px; border-left:5px solid #ffc107; border-radius:8px; color:#333;">
-        “¡Estoy pasado a fritura!”<br>
-        “¡Huelo a picada con menú del día!”
-      </blockquote>
+
+      <div class="cita-alegre"><span class="emoji">🍟</span>“¡Estoy pasado a fritura!”<br>“¡Huelo a picada con menú del día!”</div>
+
       <p>Y justo tenía una junta después. Sin muda, sin perfume, sin escapatoria.<br>
       Ahí, entre el olor a empanada pegado en la ropa y el miedo de espantar a los amigos, surgió la pregunta mágica:</p>
-      <blockquote style="background:#fff3cd; padding:15px; border-left:5px solid #ffc107; border-radius:8px; color:#333;">
-        <strong>¿Por qué no existe un desodorante para la ropa que elimine el olor a fritura?</strong>
-      </blockquote>
+
+      <div class="burbuja">¿Por qué no existe un desodorante para la ropa que elimine el olor a fritura?<span class="autor">— brainstorming entre humo y humor</span></div>
+
       <p>Y así, entre el humo y el humor, nació el nombre que lo cambiaría todo:</p>
       <p style="font-size: 1.3rem; font-weight: bold; text-align: center; background: #ffdd57; padding: 10px; border-radius: 10px; color: #333;">
         🎉 ¡FritHurra! Frit Frit Hurra! Frit Frit Hurra! 🎉
@@ -204,26 +189,8 @@
       <p>Somos un equipo apasionado por resolver problemas cotidianos. <strong>FritHurra!®</strong> nació de la necesidad de eliminar el olor a fritura en la ropa. ¡Gracias por acompañarnos!</p>
 
       <h2>Lo que imaginamos que dirán los primeros en oler la diferencia 😄</h2>
-      <blockquote style="background:#fff3cd; padding:15px; border-left:5px solid #ffc107; margin-bottom:10px; border-radius:8px; color:#333;">
-        “Si FritHurra! funciona como promete, ¡me cambia la vida! Adiós ropa con olor a papas fritas.”<br>
-        <em>— Camila, fan del almuerzo</em>
-      </blockquote>
-      <blockquote style="background:#fff3cd; padding:15px; border-left:5px solid #ffc107; margin-bottom:10px; border-radius:8px; color:#333;">
-        “Todavía no lo pruebo, pero si logra que mi polera no huela a empanadas... ¡me tienen!”<br>
-        <em>— Diego, soñador de Valpo</em>
-      </blockquote>
-
-      <div style="background: #fff8dc; padding: 30px; border-radius: 15px; margin-top: 40px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); border-left: 6px solid #ffdd57;">
-        <h2 style="color:#333; font-size: 1.8rem; margin-bottom: 10px;">🤔 ¿Sabías que…?</h2>
-        <p style="color:#444; font-size: 1.1rem; line-height: 1.6;">
-          El olor a fritura se adhiere a las fibras de tu ropa <strong>¡como si pagara arriendo! 😅</strong><br><br>
-          Compuestos como <strong>aldehídos</strong> y <strong>aceites volátiles</strong> se instalan en tus prendas como inquilinos molestos, y ni el viento más fuerte los saca.
-        </p>
-        <p style="color:#333; font-weight: 600; margin-top: 20px;">
-          Pero tranqui 😌:<br>
-          <span style="background: #ffdd57; padding: 5px 10px; border-radius: 10px;">FritHurra!®</span> está en desarrollo para ayudarte a <strong>ventilar el pasado y oler a futuro</strong> 💨👕💛
-        </p>
-      </div>
+      <div class="cita-alegre"><span class="emoji">😍</span>“Si FritHurra! funciona como promete, ¡me cambia la vida! Adiós ropa con olor a papas fritas.”<br><em>— Camila, fan del almuerzo</em></div>
+      <div class="cita-alegre"><span class="emoji">😋</span>“Todavía no lo pruebo, pero si logra que mi polera no huela a empanadas... ¡me tienen!”<br><em>— Diego, soñador de Valpo</em></div>
     </div>
   </div>
 
@@ -231,11 +198,11 @@
     🛠️ Producto en desarrollo — cocinado con cariño por <strong>FritHurra!®</strong><br>
     📜 Marca registrada en INAPI — N.º 1385816<br>
     🍤💨 Que el olor se quede en la cocina… ¡y la alegría contigo!<br>
-    📧 <a href="mailto:hola@frithurra.cl" style="color: white; text-decoration: underline;">hola@frithurra.cl</a>
+    📧 <a href="mailto:hola@frithurra.cl">hola@frithurra.cl</a>
   </footer>
 
   <!-- Botón flotante solo en móviles -->
-  <a href="mailto:hola@frithurra.cl" class="boton-contacto" style="
+  <a href="#encuesta" class="boton-contacto" style="
     position: fixed;
     bottom: 20px;
     right: 20px;
@@ -249,7 +216,7 @@
     z-index: 1000;
     font-family: 'Raleway', sans-serif;
   ">
-    📧 Escríbenos
+    🙋 Quiero ser tester
   </a>
 </body>
 </html>
