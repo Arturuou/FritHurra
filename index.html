@@ -80,6 +80,7 @@
     }
     .cta-button:hover { background-color: #ffc107; transform: translateY(-1px); }
     iframe { max-width: 100%; }
+
     footer {
       text-align: center;
       padding: 15px;
@@ -91,10 +92,11 @@
       border-radius: 0 0 10px 10px;
     }
     footer a { color: #fff; text-decoration: underline; }
+
     @media (max-width: 768px) { .boton-contacto { display: block; } }
     @media (min-width: 769px) { .boton-contacto { display: none; } }
 
-    /* Estilos especiales */
+    /* Tarjeta alegre para la historia */
     .cita-alegre{
       background:#fff8dc;
       border-left:6px solid #ffdd57;
@@ -106,6 +108,7 @@
     }
     .cita-alegre .emoji{ font-size:1.2rem; margin-right:6px; }
 
+    /* Burbuja de diálogo para opiniones */
     .burbuja{
       background:#fffbec;
       border:1px solid #ffe28a;
@@ -126,6 +129,39 @@
     .burbuja .autor{
       display:block; font-size:.95rem; opacity:.75; margin-top:8px;
     }
+
+    /* ¿Sabías que…? alegre y consistente */
+    .sabias-que {
+      background: #fff8dc;
+      border-left: 6px solid #ffdd57;
+      border-radius: 15px;
+      padding: 24px;
+      margin-top: 40px;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.1);
+      position: relative;
+    }
+    .sabias-que::before {
+      content: "💡";
+      position: absolute;
+      top: -18px;
+      left: 16px;
+      background: #ffdd57;
+      border-radius: 50%;
+      padding: 8px;
+      font-size: 1.4rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    }
+    .sabias-que h2 {
+      color: #333;
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+    .sabias-que p {
+      color: #444;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    .sabias-que strong { color: #000; }
   </style>
 </head>
 <body>
@@ -188,6 +224,19 @@
       <h2>Lo que imaginamos que dirán los primeros en oler la diferencia 😄</h2>
       <div class="burbuja">Si FritHurra! funciona como promete, ¡me cambia la vida! Adiós ropa con olor a papas fritas.<span class="autor">— Camila, fan del almuerzo</span></div>
       <div class="burbuja">Todavía no lo pruebo, pero si logra que mi polera no huela a empanadas... ¡me tienen!<span class="autor">— Diego, soñador de Valpo</span></div>
+
+      <!-- Bloque ¿Sabías que…? con estilo alegre -->
+      <div class="sabias-que">
+        <h2>🤔 ¿Sabías que…?</h2>
+        <p>
+          El olor a fritura se adhiere a las fibras de tu ropa <strong>¡como si pagara arriendo! 😅</strong><br><br>
+          Compuestos como <strong>aldehídos</strong> y <strong>aceites volátiles</strong> se instalan en tus prendas como inquilinos molestos, y ni el viento más fuerte los saca.
+        </p>
+        <p style="color:#333; font-weight: 600; margin-top: 20px;">
+          Pero tranqui 😌:<br>
+          <span style="background: #ffdd57; padding: 5px 10px; border-radius: 10px;">FritHurra!®</span> está en desarrollo para ayudarte a <strong>ventilar el pasado y oler a futuro</strong> 💨👕💛
+        </p>
+      </div>
     </div>
   </div>
 
@@ -198,7 +247,7 @@
     📧 <a href="mailto:hola@frithurra.cl">hola@frithurra.cl</a>
   </footer>
 
-  <!-- Botón flotante solo en móviles -->
+  <!-- Botón flotante solo en móviles (contacto) -->
   <a href="mailto:hola@frithurra.cl" class="boton-contacto" style="
     position: fixed;
     bottom: 20px;
